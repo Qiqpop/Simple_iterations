@@ -2,20 +2,20 @@
 #include <cmath>
 
 double f(double x) {
-	return exp(1.0 / (4.0 * (1 + sqrt(x))));
+	//return exp(1.0 / (4.0 * (1 + sqrt(x))));
+	return (-1) * pow(abs(x - 1), 0.333333);
 }
 
 double searchRoot(double a, double b, double epsilon) {
-	while (true)
+	while (abs(b - a) > epsilon)
 	{
-		b = f(a);
-		if (abs(b - a) < epsilon) break;
 		a = b;
+		b = f(a);
 	}
 	return b;
 }
 
 int main() {
-	std::cout << searchRoot(1, 2, 0.01);
+	std::cout << searchRoot(-2, -1, 0.001);
 	return 0;
 }
