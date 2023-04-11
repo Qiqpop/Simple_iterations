@@ -5,7 +5,7 @@ double f(double x) {
 	return exp(1.0 / (4.0 * (1 + sqrt(x))));
 }
 
-double serchRoot(double a, double b, double epsilon) {
+double searchRoot(double a, double b, double epsilon) {
 	while (true)
 	{
 		b = f(a);
@@ -16,6 +16,6 @@ double serchRoot(double a, double b, double epsilon) {
 }
 
 int main() {
-	std::cout << serchRoot(1, 2, 0.01);
+	std::cout << searchRoot(1, 2, 0.01);
 	return 0;
 }
